@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luperon Boat Cleaning Services | LBCS</title>
+    <meta
+      name="description"
+      content="Professional boat cleaning services in Luperón Bay, Dominican Republic. Book deck, hull, and interior cleaning packages with LBCS."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD"></script>
+  </head>
+  <body>
+    <header class="site-header" id="home">
+      <nav class="container nav">
+        <a href="#home" class="brand" aria-label="LBCS Home">
+          <span class="brand-logo">LBCS</span>
+          <span class="brand-text">Luperon Boat Cleaning Services</span>
+        </a>
+        <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu">
+          ☰
+        </button>
+        <ul class="nav-links" id="mobile-menu">
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#booking">Booking</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <section class="hero">
+        <div class="hero-overlay">
+          <div class="container hero-content">
+            <p class="eyebrow">Luperón Bay, Dominican Republic</p>
+            <h1>Luperon Boat Cleaning Services (LBCS)</h1>
+            <p class="tagline">Professional Boat Cleaning Services in Luperón Bay.</p>
+            <a href="#booking" class="btn btn-primary">Book a Cleaning Service</a>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <section class="section container" id="about">
+        <h2>About Us</h2>
+        <p>
+          Luperon Boat Cleaning Services is building a professional local team dedicated
+          to reliable, high-quality cleaning for boat owners visiting or staying in
+          beautiful Luperón Bay. We clean directly at marinas, docks, and anchorages
+          using pressure washers, fresh water, and professional marine products designed
+          for fiberglass, gelcoat, vinyl, aluminum, and stainless steel.
+        </p>
+      </section>
+
+      <section class="section section-alt" id="services">
+        <div class="container">
+          <h2>Service Packages</h2>
+          <p class="section-intro">Choose a package priced by vessel length (per foot).</p>
+          <div class="card-grid">
+            <article class="service-card">
+              <h3>Basic Package</h3>
+              <p class="price">$6 <span>/ foot</span></p>
+              <ul>
+                <li>Deck washing</li>
+                <li>Aluminum cleaning</li>
+                <li>Windows or enclosure cleaning</li>
+              </ul>
+            </article>
+            <article class="service-card featured">
+              <h3>Standard Package</h3>
+              <p class="price">$10 <span>/ foot</span></p>
+              <ul>
+                <li>Deck washing</li>
+                <li>Aluminum cleaning</li>
+                <li>Windows or enclosure cleaning</li>
+                <li>Hull washing</li>
+              </ul>
+            </article>
+            <article class="service-card">
+              <h3>Premium Package</h3>
+              <p class="price">$15 <span>/ foot</span></p>
+              <ul>
+                <li>Deck washing</li>
+                <li>Aluminum cleaning</li>
+                <li>Windows or enclosure cleaning</li>
+                <li>Hull washing</li>
+                <li>Interior cleaning</li>
+              </ul>
+            </article>
+          </div>
+          <p class="note">Final pricing depends on the exact length of your vessel.</p>
+        </div>
+      </section>
+
+      <section class="section container" id="booking">
+        <h2>Book Your Cleaning</h2>
+        <form class="booking-form" id="bookingForm">
+          <div class="field-group">
+            <label for="package">Service Package</label>
+            <select id="package" name="package" required>
+              <option value="6">Basic - $6/ft</option>
+              <option value="10" selected>Standard - $10/ft</option>
+              <option value="15">Premium - $15/ft</option>
+            </select>
+          </div>
+
+          <div class="field-group">
+            <label for="boatLength">Boat Length (feet)</label>
+            <input id="boatLength" name="boatLength" type="number" min="10" required />
+          </div>
+
+          <div class="field-group">
+            <label for="serviceDate">Preferred Service Date</label>
+            <input id="serviceDate" name="serviceDate" type="date" required />
+          </div>
+
+          <div class="field-group">
+            <label for="location">Marina / Dock Location</label>
+            <input id="location" name="location" type="text" placeholder="e.g. Puerto Blanco Marina" required />
+          </div>
+
+          <div class="field-group full-width">
+            <label for="instructions">Special Instructions</label>
+            <textarea id="instructions" name="instructions" rows="4" placeholder="Access details, preferred time, sensitive areas..."></textarea>
+          </div>
+
+          <div class="field-group">
+            <label for="paymentType">Payment Option</label>
+            <select id="paymentType" name="paymentType">
+              <option value="deposit">Pay 30% deposit</option>
+              <option value="full">Pay full amount</option>
+            </select>
+          </div>
+
+          <div class="price-box">
+            <p>Estimated Price</p>
+            <strong id="calculatedPrice">$0.00</strong>
+            <small id="paymentSummary">Deposit (30%): $0.00</small>
+          </div>
+
+          <div class="full-width">
+            <button class="btn btn-primary" type="submit">Confirm Booking Details</button>
+          </div>
+        </form>
+
+        <div class="payment-panel">
+          <h3>Pay Online with PayPal</h3>
+          <p>Complete your booking by paying a deposit or full amount securely online.</p>
+          <div id="paypal-button-container"></div>
+        </div>
+      </section>
+
+      <section class="section section-alt" id="subscriptions">
+        <div class="container">
+          <h2>Subscription Services</h2>
+          <p class="section-intro">
+            Save with recurring cleanings and keep your vessel guest-ready year-round.
+          </p>
+          <div class="subscription-grid">
+            <article>
+              <h3>Weekly Cleaning</h3>
+              <p>Best for active charters and full-time liveaboards.</p>
+            </article>
+            <article>
+              <h3>Bi-weekly Cleaning</h3>
+              <p>Balanced maintenance with reduced service rates.</p>
+            </article>
+            <article>
+              <h3>Monthly Maintenance</h3>
+              <p>Reliable upkeep for seasonal and anchored vessels.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section container" id="gallery">
+        <h2>Before &amp; After Gallery</h2>
+        <div class="gallery-grid">
+          <figure><div class="photo before">Deck Before</div><figcaption>Deck restoration</figcaption></figure>
+          <figure><div class="photo after">Deck After</div><figcaption>Cleaned non-slip deck</figcaption></figure>
+          <figure><div class="photo before">Hull Before</div><figcaption>Waterline stain removal</figcaption></figure>
+          <figure><div class="photo after">Hull After</div><figcaption>Polished hull finish</figcaption></figure>
+          <figure><div class="photo before">Stainless Before</div><figcaption>Oxidized rails</figcaption></figure>
+          <figure><div class="photo after">Stainless After</div><figcaption>Shiny metal surfaces</figcaption></figure>
+          <figure><div class="photo before">Interior Before</div><figcaption>Interior tidy-up</figcaption></figure>
+          <figure><div class="photo after">Interior After</div><figcaption>Fresh interior cleaning</figcaption></figure>
+        </div>
+      </section>
+
+      <section class="section section-alt" id="reviews">
+        <div class="container">
+          <h2>Boat Owner Reviews</h2>
+          <div class="review-grid">
+            <blockquote>
+              “Our deck and enclosure looked brand new after one visit. Great communication and punctual team.”
+              <cite>— Sailing Yacht Aurora</cite>
+            </blockquote>
+            <blockquote>
+              “Super practical service at anchor in Luperón Bay. Worth every dollar for the time saved.”
+              <cite>— Catamaran Isla Vida</cite>
+            </blockquote>
+            <blockquote>
+              “Excellent stainless and hull cleaning. We booked a monthly plan immediately.”
+              <cite>— Motor Yacht Carib Star</cite>
+            </blockquote>
+          </div>
+
+          <form class="review-form">
+            <h3>Leave a Review</h3>
+            <input type="text" placeholder="Your name / vessel" aria-label="Your name or vessel" />
+            <textarea rows="3" placeholder="Share your experience" aria-label="Review message"></textarea>
+            <button class="btn" type="button">Submit Review</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="section container" id="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-grid">
+          <form class="contact-form">
+            <label for="name">Name</label>
+            <input id="name" type="text" required />
+            <label for="email">Email</label>
+            <input id="email" type="email" required />
+            <label for="message">Message</label>
+            <textarea id="message" rows="4" required></textarea>
+            <button class="btn btn-primary" type="submit">Send Email Request</button>
+          </form>
+
+          <div class="contact-info">
+            <p><strong>Phone:</strong> +1 (809) 555-0147</p>
+            <p><strong>Email:</strong> bookings@luperonboatcleaning.com</p>
+            <p><strong>Location:</strong> Marinas & docks in Luperón Bay, Puerto Plata, DR</p>
+            <a class="btn" href="mailto:bookings@luperonboatcleaning.com">Email Us Directly</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <div>
+          <p class="footer-brand">LBCS</p>
+          <p>Luperon Boat Cleaning Services</p>
+        </div>
+        <ul class="quick-links">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#booking">Booking</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="socials" aria-label="Social Media Links">
+          <a href="#" aria-label="Instagram">◉</a>
+          <a href="#" aria-label="Facebook">◉</a>
+          <a href="#" aria-label="YouTube">◉</a>
+        </div>
+      </div>
+    </footer>
+
+    <a
+      class="whatsapp-float"
+      href="https://wa.me/18095550147"
+      target="_blank"
+      rel="noopener"
+      aria-label="Chat on WhatsApp"
+    >
+      <span>🟢</span>
+      <span>WhatsApp</span>
+    </a>
+
+    <script src="script.js"></script>
+  </body>
+</html>
