@@ -14,13 +14,13 @@ function calculatePrice() {
   const length = Number(boatLengthInput.value) || 0;
   const total = rate * length;
   const paymentType = paymentTypeSelect.value;
-  const payable = paymentType === "deposit" ? total * 0.3 : total;
+  const payable = paymentType === "deposit" ? total * 0.5 : total;
 
   currentOrderAmount = payable;
   calculatedPrice.textContent = `$${total.toFixed(2)}`;
   paymentSummary.textContent =
     paymentType === "deposit"
-      ? `Deposit (30%): $${payable.toFixed(2)}`
+      ? `Deposit (50%): $${payable.toFixed(2)}`
       : `Full payment: $${payable.toFixed(2)}`;
 }
 

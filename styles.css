@@ -52,15 +52,18 @@ body {
 .brand-logo {
   border: 2px solid var(--accent);
   border-radius: 50%;
-  width: 46px;
+  width: 100px;
   height: 46px;
   display: grid;
   place-items: center;
   font-weight: 800;
+  font-size: 25px;
 }
 
 .brand-text {
-  font-weight: 700;
+  font-weight: 800;
+  font-family: arial;
+  font-size: 15px;
 }
 
 .nav-links {
@@ -322,22 +325,27 @@ textarea {
   text-decoration: none;
 }
 
-.whatsapp-float {
-  position: fixed;
-  right: 1rem;
-  bottom: 1rem;
-  z-index: 99;
-  background: #25d366;
-  color: var(--white);
-  border-radius: 999px;
-  padding: 0.6rem 0.9rem;
-  text-decoration: none;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.24);
-  display: flex;
-  gap: 0.45rem;
-  align-items: center;
-  font-weight: 700;
+.whatsapp-btn {
+    position: fixed;    /* Lo mantiene fijo en la pantalla */
+    bottom: 20px;       /* Distancia desde abajo */
+    right: 20px;        /* Distancia desde la derecha */
+    z-index: 1000;      /* Asegura que esté por encima de todo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease; /* Efecto suave al pasar el mouse */
 }
+
+.whatsapp-btn img {
+    width: 100px;        /* Tamaño del icono dentro del círculo */
+    height: auto;
+}
+
+/* Efecto al pasar el mouse (hover) */
+.whatsapp-btn:hover {
+    transform: scale(1.1);     /* Crece un poquito */
+}
+
 
 @media (max-width: 780px) {
   .menu-toggle {
@@ -359,4 +367,5 @@ textarea {
   .nav-links.open {
     display: flex;
   }
+ 
 }
